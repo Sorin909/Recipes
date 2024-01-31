@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Recipes_SQL.Models.Recipe>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Recipes</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Image
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Summary)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a href="@Url.Action("Details", "Recipes", new { id = item.Id })">
+                        <img src="@item.ImageUrl" alt="Recipe Image" style="max-width: 300px; max-height: 300px;" />
+                        <h3><span style="text-decoration: none;">@Html.DisplayFor(modelItem => item.Name)</span></h3>
+                        <br />
+                    </a>
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Summary)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

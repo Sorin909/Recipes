@@ -1,0 +1,55 @@
+﻿@model Recipes_SQL.Models.Recipe
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <img src="@Url.Content(Model.ImageUrl)" alt="Recipe Image" style="max-width: 100%; height: auto;" />
+        <button onclick="window.location.href='@Url.Action("Edit", "Recipes", new { id = Model.Id })'" class="mt-4 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded">Edit Recipe</button>
+        <button onclick="window.location.href='@Url.Action("Delete", "Recipes", new { id = Model.Id })'" class="mt-4 bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded">Delete</button>
+    </div>
+    </div>
+    <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-12">
+                <strong>@Html.DisplayNameFor(model => model.Name)</strong>
+            </div>
+            <div class="col-md-12">
+                <p style="word-wrap: break-word;">@Html.DisplayFor(model => model.Name)</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <strong>@Html.DisplayNameFor(model => model.Summary)</strong>
+            </div>
+            <div class="col-md-12">
+                <p style="word-wrap: break-word;">@Html.DisplayFor(model => model.Summary)</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <strong>@Html.DisplayNameFor(model => model.Ingredients)</strong>
+            </div>
+            <div class="col-md-12">
+                <p style="word-wrap: break-word;">@Html.DisplayFor(model => model.Ingredients)</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <strong>@Html.DisplayNameFor(model => model.Method)</strong>
+            </div>
+            <div class="col-md-12">
+                <p style="word-wrap: break-word;">@Html.DisplayFor(model => model.Method)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+
+    <a asp-action="Index">Back to List</a>
+</div>
